@@ -1,0 +1,63 @@
+@mixin body_setup {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@mixin flex_center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex_column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex_apart {
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin link {
+	text-decoration: none;
+}
+
+@mixin anchor_btn {
+	display: inline-block;
+	text-decoration: none;
+}
+
+@mixin background_image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	background-size: cover;
+}
+
+@mixin transform_text {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+@mixin margin_vertical {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@mixin margin_horizontal {
+	margin: 0 auto;
+}
+
+@mixin btn_offset {
+	border: 2px solid $neutral_one;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 180px;
+	height: 47px;
+}

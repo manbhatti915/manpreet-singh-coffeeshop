@@ -1,0 +1,310 @@
+@use 'partials/variables' as *;
+@use 'partials/typography' as *;
+@use 'partials/mixins' as *;
+
+body {
+	font-family: $font_family;
+	@include body_setup;
+}
+
+header,
+footer {
+	background-color: $primary_two;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+header {
+	padding-bottom: 100px;
+	height: 600px;
+}
+
+.nav {
+	@include flex_apart;
+	&__logo a {
+		@include link;
+		font-size: 2.5rem;
+		color: $neutral_one;
+		text-transform: lowercase;
+		font-weight: $regular;
+	}
+	&__links a {
+		text-decoration: none;
+		color: $neutral_one;
+		text-transform: uppercase;
+		padding-right: 20px;
+	}
+}
+
+.icon {
+	width: 50px;
+	height: 35px;
+}
+
+.nav__links .nav__link--style {
+	color: $primary_one;
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: $big_text;
+	font-weight: $regular;
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: $big_text;
+	font-weight: $regular;
+	text-align: center;
+}
+
+.hero {
+	@include flex_apart;
+	width: 90%;
+	box-sizing: border-box;
+	margin-left: 40px;
+	margin-top: 3%;
+	padding-left: 50px;
+
+	&__content {
+		width: 20%;
+		p {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.hero__btn {
+	background-color: $primary_one;
+	width: 180px;
+	height: 47px;
+	color: $nuetral_three;
+	padding: 15px 20px 15px;
+	@include anchor_btn;
+	@include transform_text;
+}
+
+.hero__btn,
+.hero__btn:before {
+	box-sizing: border-box;
+}
+
+.hero__btn:before {
+	@include btn_offset;
+	top: 352px;
+	left: 85px;
+	z-index: 2;
+}
+
+.learn__position {
+	position: relative;
+}
+
+.learn__btn {
+	@extend .hero__btn;
+}
+
+.learn__btn,
+.learn__btn:before {
+	box-sizing: border-box;
+}
+
+.learn__btn:before {
+	@include btn_offset;
+	top: -5px;
+	left: -5px;
+	z-index: 2;
+}
+
+.btn__align {
+	width: 180px;
+	@include margin_horizontal;
+	text-align: center;
+}
+
+.view__position {
+	position: relative;
+}
+
+.view__btn {
+	@extend .hero__btn;
+}
+
+.view__btn,
+.view__btn:before {
+	box-sizing: border-box;
+}
+
+.view__btn:before {
+	@include btn_offset;
+	top: -5px;
+	left: -5px;
+	z-index: 2;
+}
+
+.product__items {
+	@include flex_center;
+	flex-wrap: wrap;
+}
+
+.product__item {
+	margin: 20px 20px 20px 20px;
+	width: 300px;
+	height: 385px;
+	border-radius: 10px;
+	box-shadow: 0 5px 9px -1px;
+	color: rgba(0, 0, 0, 0.25);
+	text-align: center;
+	padding: 20px 0 20px;
+	box-sizing: border-box;
+}
+
+.product__image {
+	height: 250px;
+}
+
+.product__desc {
+	background-color: $primary_two;
+	text-align: left;
+	@include flex_apart;
+	margin-top: 20px;
+	padding: 10px 20px;
+	border-radius: 0 0 10px 10px;
+}
+
+.product__info p:first-child {
+	color: black;
+	font-size: $small_text;
+	margin-bottom: 0;
+}
+
+.product__desc p:nth-of-type(2) {
+	margin-top: 0;
+}
+
+.price {
+	color: $primary_one;
+	display: flex;
+	align-items: center;
+	font-weight: $bold;
+	font-size: $small_text;
+}
+
+section {
+	margin-bottom: 40px;
+}
+
+.description {
+	@include flex_apart;
+	flex-wrap: wrap;
+	margin: 0 15%;
+
+	&__content {
+		width: 33%;
+
+		h2 {
+			margin-bottom: 20px;
+			text-align: left;
+		}
+	}
+}
+
+.description__image {
+	@include flex_apart;
+	margin-bottom: 20px;
+}
+
+.can__background {
+	background-image: url("../assets/images/coldbrewbackground.png");
+	@include background_image;
+	width: 400px;
+	height: 400px;
+}
+
+.first {
+	position: relative;
+}
+
+.can__background::before {
+	content: "";
+	border: 5px solid $primary_one;
+	box-sizing: border-box;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: 400px;
+	height: 400px;
+}
+
+.can__image {
+	width: 200px;
+	height: 250px;
+	position: absolute;
+}
+
+.discount {
+	font-size: $medium_text;
+	font-weight: $medium;
+	background-color: $neutral_one;
+	color: $nuetral_three;
+	text-align: center;
+	width: 80%;
+	margin: 160px auto;
+	padding: 40px 0;
+}
+
+.discount p {
+	@include margin_horizontal;
+}
+
+span.code {
+	font-weight: bold;
+}
+
+.footer__items {
+	@include flex_apart;
+	flex-wrap: wrap;
+}
+.beans__left {
+	background-image: url("../assets/logos/coffee-beans-logo-and-footer.svg");
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 60px;
+	position: relative;
+	top: 20px;
+	left: -14px;
+	opacity: 25%;
+}
+
+.beans__right {
+	@extend .beans__left;
+	top: 70px;
+	left: 24px;
+	overflow: hidden;
+}
+
+.footer__address,
+.footer__hours,
+.footer__social {
+	font-size: $medium_text;
+	font-weight: $regular;
+	margin-bottom: 10px;
+}
+
+.hours {
+	font-weight: $bold;
+}
+
+.footer_bottom {
+	@include margin_vertical;
+}
+
+.footer__item {
+	margin-left: 10%;
+	p:nth-last-child(1) {
+		padding-bottom: 20px;
+	}
+}
